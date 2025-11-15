@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository <Product,Integer> {
 
-    @Query ("select p from products p where p.product_name=?1")
+    @Query ("select p from Product p where p.productName=?1")
     public List<Product> getProductByName(String productName);
-    @Query ("select p from products p where  p.price?1 ")
+    @Query ("select p from Product p where  p.price=?1 ")
     public List<Product> getProductByPrice(Float price);
 }

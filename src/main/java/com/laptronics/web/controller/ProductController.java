@@ -11,11 +11,11 @@ import java.util.List;
 public class ProductController {
 @Autowired
     private ProductService obj;
-@GetMapping("products")
+@GetMapping("/products")
     public List<Product> getAllProducts(){
     return  obj.getAllProducts();
 }
-@GetMapping("products/{id}")
+@GetMapping("/products/{id}")
 public Product getProductByID(@PathVariable int productID){
     return obj.getProductById(productID);
 }

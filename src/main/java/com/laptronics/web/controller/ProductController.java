@@ -16,7 +16,7 @@ public class ProductController {
     return  obj.getAllProducts();
 }
 @GetMapping("/products/{id}")
-public Product getProductByID(@PathVariable int productID){
+public Product getProductByID(@PathVariable("id") int productID){
     return obj.getProductById(productID);
 }
 @PostMapping("/products")
@@ -28,16 +28,16 @@ public Product getProductByID(@PathVariable int productID){
     return obj.updateProduct(pro);
 }
 @DeleteMapping("/products/{id}")
-    public void deleteProduct(@PathVariable int productID){
+public void deleteProduct(@PathVariable("id") int productID){
     obj.deleteProduct(productID);
 }
 @GetMapping( path = "/products", params = {"product_name"})
-    public List<Product>getProductByName(@RequestParam String productName) {
+    public List<Product>getProductByName(@RequestParam("product_name") String productName) {
     return obj.getProductByName(productName);
 }
 
 @GetMapping (path = "/products", params = {"product_price"})
-    public List<Product>getProductByPrice(@RequestParam Float price){
+    public List<Product>getProductByPrice(@RequestParam("product_price") Float price){
     return  obj.getProductByPrice(price);
 }
 }

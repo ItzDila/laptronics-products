@@ -27,6 +27,11 @@ public Product getProductByID(@PathVariable("id") int productID){
     public Product updateProduct(@RequestBody Product pro){
     return obj.updateProduct(pro);
 }
+@PutMapping("/products/{id}")
+    public Product updateProductById(@PathVariable("id") int productID, @RequestBody Product pro){
+    pro.setProductID(productID);
+    return obj.updateProduct(pro);
+}
 @DeleteMapping("/products/{id}")
 public void deleteProduct(@PathVariable("id") int productID){
     obj.deleteProduct(productID);

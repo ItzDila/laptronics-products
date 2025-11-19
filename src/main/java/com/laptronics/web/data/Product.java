@@ -23,6 +23,9 @@ public class Product {
     @Column(name = "picture_link")
     private String pictureLink;
 
+    @Column(name = "current_qty")
+    private int currentQty;
+
     public int getProductID() {
         return productID;
     }
@@ -62,5 +65,14 @@ public class Product {
     public void setPictureLink(String pictureLink) {
         this.pictureLink = pictureLink;
     }
+
+    public int getCurrentQty() {
+        return currentQty;
+    }
+
+    public void setCurrentQty(int currentQty) {
+        this.currentQty = currentQty;
+    }
+
 }
 
